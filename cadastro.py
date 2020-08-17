@@ -23,7 +23,7 @@ def cadastra_produto():
 
     with connection.cursor() as cursor:
             # Create a new record
-            sql = "INSERT INTO `produtos` (`tipo`, `genero`,`tamanho`,`marca`,`cor`,`quantidade`) VALUES (%s, %s, %s, %s, %s, %s)"
+            sql = "INSERT INTO `PRODUTO` (`TIPO`, `GENERO`,`TAMANHO`,`MARCA`,`COR`,`QUANTIDADE`) VALUES (%s, %s, %s, %s, %s, %s)"
             cursor.execute(sql, (prod1.tipo,prod1.genero,prod1.tamanho,prod1.marca,prod1.cor,prod1.quantidade))
 
         # connection is not autocommit by default. So you must commit to save

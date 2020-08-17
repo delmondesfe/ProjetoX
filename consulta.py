@@ -12,9 +12,10 @@ connection = pymysql.connect(host='localhost',
 def consulta_produto():
     with connection.cursor() as cursor:
             # Read a single record
-            sql = "SELECT * FROM produtos WHERE `quantidade`>%s"
+            sql = "SELECT * FROM PRODUTO WHERE `QUANTIDADE`>%s"
             cursor.execute(sql, ('0',))
             for  item in cursor.fetchall():
                 print(item)
 
     connection.close()
+

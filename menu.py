@@ -4,7 +4,7 @@ import consulta
 import pymysql.cursors
 
 def menu():
-    print('Digite: 1-Cadastro 2-Consulta\n')
+    print('Digite: 1-Cadastrar 2-Consulta\n')
 
     escolha = int(input("Escolha: "))
 
