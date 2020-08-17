@@ -1,4 +1,4 @@
-from produto import Produto
+from produto_class import Produto
 import pymysql.cursors
 
 connection = pymysql.connect(host='localhost',
