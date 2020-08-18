@@ -13,9 +13,10 @@ def consulta_produto():
     with connection.cursor() as cursor:
             # Read a single record
             sql = "SELECT * FROM PRODUTO WHERE `QUANTIDADE`>%s"
-            cursor.execute(sql, ('0',))
-            for  item in cursor.fetchall():
-                print(item)
+            #cursor.execute(sql, ('0',))
+            #for item in cursor.fetchall():
+            result = cursor.fetchall()
+                print(result)
 
     connection.close()
 
