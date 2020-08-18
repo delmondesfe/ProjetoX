@@ -1,19 +1,20 @@
 import os
 import produto_class
 
+
 def menu():
     print('Digite: 1-Cadastrar 2-Consulta\n')
 
     escolha = int(input("Escolha: "))
 
     if (escolha == 1):
-        cadastro.cadastra_produto()
+        produto_class.cadastra_produto()
         print('Produto cadastrado com sucesso!!')
         input('Continuar')
 
 
     elif (escolha ==2):
-        consulta.consulta_produto()
+        produto_class.consulta_produto()
         input('Continuar')
 
 clear = lambda: os.system('clear')
