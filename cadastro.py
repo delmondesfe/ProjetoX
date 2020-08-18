@@ -17,7 +17,7 @@ def cadastra_produto():
     tamanho = input('Qual o tamanho: ')
     cor = input('Digite a cor: ')
     marca = input('Qual a marca: ')
-    estoq_var = input('Qual a quantidade: ')
+    estoq_var = int(input('Qual a quantidade: '))
 
     prod1 = Produto(tipo,genero,tamanho,cor,marca,estoq_var)
 
