@@ -1,4 +1,4 @@
 # ProjetoX
 
-Aplicação de controle de estoque feita por 3 estudantes de Python.
+Aplicação de controle de estoque feita por 2 estudantes de Python.
 
