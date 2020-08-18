@@ -1,7 +1,5 @@
 import os
-import cadastro
-import consulta
-import pymysql.cursors
+import produto_class
 
 def menu():
     print('Digite: 1-Cadastrar 2-Consulta\n')
