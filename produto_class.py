@@ -12,7 +12,7 @@ class Produto:
 
 connection = pymysql.connect(host='localhost',
                              user='root',
-                             password='Amil@2020',
+                             password='root2020',
                              db='estoque',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
