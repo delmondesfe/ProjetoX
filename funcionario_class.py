@@ -1,3 +1,12 @@
+import pymysql.cursors
+
+connection = pymysql.connect(host='localhost',
+                             user='root',
+                             password='Amil@2020',
+                             db='estoque',
+                             charset='utf8mb4',
+                             cursorclass=pymysql.cursors.DictCursor)
+
 class Funcionarios:
     def __init__(self, cpf, nome, cargo):
         self.cpf = cpf
@@ -12,8 +21,20 @@ def cadastra_func():
 
     funcs = Funcionarios(cpf,nome,cargo)
 
-    print('Funcionário {} cadastrado'.format(funcs.nome))
-    
+    with connection.cursor() as cursor:
+        sql = "INSERT INTO `FUNCIONARIOS` (`CPF`,`NOME`,`CARGO`) VALUES (%s, %s, %s)"
+        cursor.execute(sql, (funcs.cpf,funcs.nome,funcs.cargo))
+
+    connection.commit()
+
+def consulta_func():
+    with connection.cursor() as cursor:
+            
+            sql = "SELECT * FROM FUNCIONARIOS WHERE `ID_FUNC`>=%s"
+            cursor.execute(sql, ('0',))
+            for item in cursor.fetchall():
+               print(item)
+    connection.close()
 
 
     
