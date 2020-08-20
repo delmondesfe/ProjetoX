@@ -1,32 +1,30 @@
 import pymysql.cursors
 
-class Produto:
-    def __init__(self, tipo,genero,tamanho,cor,marca,quantidade):
-        self.__tipo = tipo
-        self.__genero = genero
-        self.__tamanho = tamanho
-        self.__cor = cor
-        self.__marca = marca
-        self.__quantidade = quantidade
-
 
 connection = pymysql.connect(host='localhost',
                              user='root',
-                             password='root2020',
+                             password='Amil@2020',
                              db='estoque',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
 
+class Produto:
+    def __init__(self, tipo,genero,tamanho,cor,marca,quantidade):
+        self.tipo = tipo
+        self.genero = genero
+        self.tamanho = tamanho
+        self.cor = cor
+        self.marca = marca
+        self.quantidade = quantidade
+
 
 def consulta_produto():
     with connection.cursor() as cursor:
-            # Read a single record
-            sql = "SELECT * FROM PRODUTO WHERE `QUANTIDADE`>%s"
+            
+            sql = "SELECT * FROM PRODUTO WHERE `QUANTIDADE`>=%s"
             cursor.execute(sql, ('0',))
             for item in cursor.fetchall():
-            #result = cursor.fetchall()
-                print(item)
-
+               print(item)
     connection.close()
 
 def cadastra_produto():
