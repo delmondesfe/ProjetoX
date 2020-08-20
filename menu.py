@@ -22,15 +22,18 @@ def menu():
         senha = int(input('Digite sua senha: '))
 
         if (senha == 2020):
-            opt = input('1 - Cadastrar funcionário 2 - Consultar funcionários')
+            opt = int(input('1 - Cadastrar funcionário 2 - Consultar funcionários: '))
             if (opt == 1):
                 funcionario_class.cadastra_func()
                 print('Funcionário cadastrado com sucesso !!')
+                input('Continue')
             elif (opt == 2):
-                print('ERRO')
+                funcionario_class.consulta_func()
+                input('Continue')
 
         else:
             print('Senhra incorreta !!')
+            input('Continue')
             
 
 
@@ -39,13 +42,18 @@ clear = lambda: os.system('clear')
 clear()
 
 while True:
-    print("\033[2;1H")
-    print('**Controle de estoque**')
-    opt = int(input('1 - Menu cadastro\n2 - Sair\nEscolha: ' ))
+    try:
+        print("\033[3;1H")
+        print('**Controle de estoque**')
+        opt = int(input('1 - Menu cadastro\n2 - Sair\nEscolha: ' ))
 
-    if opt ==1:
+        if opt ==1:
+            menu()
+            clear()
+        elif opt ==2:
+            clear()
+            break
+    
+    except ValueError:
+        print('Favor digite uma opção válida!!!')
         menu()
-        clear()
-    elif opt ==2:
-        clear()
-        break
