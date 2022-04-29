@@ -13,7 +13,7 @@ class Funcionarios:
         self.nome = nome
         self.cargo = cargo
 
-def cadastra_func():
+def cadastro_funcionario():
 
     cpf = input('Digite o CPF do Funcionario para cadastro: ')
     nome = input('Digite o nome completo: ')
@@ -27,7 +27,7 @@ def cadastra_func():
 
     connection.commit()
 
-def consulta_func():
+def consulta_funcionario():
     with connection.cursor() as cursor:
             
             sql = "SELECT * FROM FUNCIONARIOS WHERE `ID_FUNC`>=%s"

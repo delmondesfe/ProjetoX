@@ -24,11 +24,11 @@ def menu():
         if (senha == 2020):
             opt = int(input('1 - Cadastrar funcionário 2 - Consultar funcionários: '))
             if (opt == 1):
-                funcionario_class.cadastra_func()
+                funcionario_class.cadastro_funcionario()
                 print('Funcionário cadastrado com sucesso !!')
                 input('Continue')
             elif (opt == 2):
-                funcionario_class.consulta_func()
+                funcionario_class.consulta_funcionario()
                 input('Continue')
 
         else:
